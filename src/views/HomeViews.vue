@@ -127,19 +127,19 @@ export default {
 
       dots.forEach((dot) => {
         const initialTop = parseInt(dot.dataset.initialTop, 0);
-        const offset = (scrollY * 0.5) + 'px';
+        const offset = (scrollY * 0.25) + 'px';
         dot.style.transform = `translateY(${offset})`;
       });
 
       clouds.forEach((cloud) => {
         const initialTop = parseInt(cloud.dataset.initialTop, 0);
-        const offset = (scrollY * 0.5) + 'px';
+        const offset = (scrollY * 0.25) + 'px';
         cloud.style.transform = `translateY(${offset})`;
       });
 
       bracket.forEach((bracket) => {
         const initialTop = parseInt(bracket.dataset.initialTop, 0);
-        const offset = (scrollY * 0.5) + 'px';
+        const offset = (scrollY * 0.25) + 'px';
         bracket.style.transform = `translateY(${offset})`;
       });
     },
