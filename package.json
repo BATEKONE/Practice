@@ -7,7 +7,10 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "gsap": "^3.12.2",
     "vue": "^3.2.13",
+    "vue-marquee": "^1.2.0",
+    "vue-parallaxy": "^1.1.1",
     "vue-router": "^4.0.3",
     "vuex": "^4.0.0"
   },
