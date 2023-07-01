@@ -38,27 +38,28 @@
       </div>
       <ButtonsComponents :showFirstButton="false"/>
     </div>
-
-<!--    <CursorComponents />-->
+    <CursorComponents />
 
     <div class="marquee">
-      <img src="../assets/Union.svg" alt="Union">
-      <img src="../assets/Union1.svg" alt="Union1">
-      <marquee direction="right" behavior="scroll" scrollamount="3">
-        <div>
-          <p>Sypmhony<span>Portainer</span>mongoDB<span>GOlang</span></p>
+      <div>
+        <div class="marquee-block">
+          <marquee class="marquee-sub-block" direction="right" behavior="scroll" scrollamount="9">
+            <p class="marquee-text">Sypmhony<span class="marquee-text-span">Portainer</span>mongoDB<span class="marquee-text-span">GOlang</span></p>
+          </marquee>
+          <marquee class="marquee-sub-block" direction="right" behavior="scroll" scrollamount="10">
+            <p class="marquee-text">Laravel<span class="marquee-text-span">Docker</span>PostgreSQL<span class="marquee-text-span">NuxtJS</span>nest</p>
+          </marquee>
+                  <img src="../assets/Union.png" alt="Union">
         </div>
-      </marquee>
-      <marquee direction="right" behavior="scroll" scrollamount="4">
-        <div>
-          <p>Laravel<span>Docker</span>PostgreSQL<span>NuxtJS</span>nest</p>
+        <div class="marquee-block">
+          <marquee class="marquee-sub-block" direction="left" behavior="scroll" scrollamount="9">
+            <p class="marquee-text">Keycloak<span class="marquee-text-span">GitLab</span>Python<span class="marquee-text-span">Swagger</span>PHP</p>
+          </marquee>
+          <marquee class="marquee-sub-block" direction="left" behavior="scroll" scrollamount="9">
+            <p class="marquee-text">Keycloak<span class="marquee-text-span">GitLab</span>Python<span class="marquee-text-span">Swagger</span>PHP</p>
+          </marquee>
         </div>
-      </marquee>
-      <marquee direction="left" behavior="scroll" scrollamount="3">
-        <div>
-          <p>Keycloak<span>GitLab</span>Python<span>Swagger</span>PHP</p>
-        </div>
-      </marquee>
+      </div>
     </div>
   </main>
 </template>
@@ -186,17 +187,25 @@ header{
   color: #fff;
 }
 
+.header-list li a:hover{
+  color: #CEF934;
+}
+
+.header-list li a:active{
+  color: #b4df1a;
+}
+
 .main-hero{
   display: grid;
   justify-items: center;
   justify-content: center;
   position: relative;
   row-gap: 40px;
-  padding: 30px 0;
+  margin-bottom: 40px;
   z-index: 0;
 }
 
-img{
+.main-hero img{
   position: absolute;
   z-index: 2;
   background-color: transparent;
@@ -324,28 +333,58 @@ img{
   bottom: 2%;
 }
 
-.marquee{
+.marquee {
+  position: relative;
   display: grid;
-  row-gap: 10px;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.marquee-block {
   position: relative;
   z-index: 0;
+  background: transparent;
 }
 
-.marquee img{
-  width: 100%;
+.marquee-block img {
   position: absolute;
   z-index: -1;
+  width: 100%;
+  height: 90vh;
+  top: -100%;
+  left: 0;
 }
 
-marquee div p{
+.marquee-sub-block {
+  background-color: transparent;
+  z-index: 1;
+}
+
+.marquee-text {
   font-family: Unbounded, sans-serif;
   font-size: 64px;
   font-weight: 500;
   line-height: 79px;
   text-align: center;
-
+  background-color: transparent;
   color: #000;
+  display: flex;
+  column-gap: 13px;
 }
 
-marquee div span{}
+.marquee-text-span {
+  background: transparent;
+  font-family: Unbounded, sans-serif;
+  font-size: 64px;
+  line-height: 79px;
+  text-align: left;
+  font-weight: bold;
+  color: #CEF934;
+  text-shadow:
+      -1.6px -1.6px 0 #000,
+      1.6px -1.6px 0 #000,
+      -1.6px 1.6px 0 #000,
+      1.6px 1.6px 0 #000;
+}
 </style>

@@ -1,6 +1,6 @@
 import { gsap } from 'gsap';
 import { EventEmitter } from 'events';
-import { lerp, getMousePos, calcWinsize, distance } from '../button/utils';
+import { lerp, getMousePos, calcWinsize, distance } from '../button/utils_button';
 
 // Calculate the viewport size
 let winsize = calcWinsize();

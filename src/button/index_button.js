@@ -1,5 +1,5 @@
 import Cursor from '../button/cursor';
-import ButtonCtrl from './buttonCtrl';
+import ButtonCtrl from '../button/buttonCtrl';
 
 // initialize custom cursor
 const cursor = new Cursor(document.querySelector('.cursor'));

@@ -1,9 +1,12 @@
 <template>
   <div class="body">
-    <button class="button" v-if="showFirstButton || !showFirstButton">
+    <button class="first-button button--pan" v-if="showFirstButton">
+      <span>Запишись</span>
+    </button>
+    <button class="button" v-else>
       <div class="button__filler"></div>
       <span class="button__text">
-        <span class="button__text-inner">Запишись{{ showFirstButton ? '' : ' первым' }}</span>
+        <span class="button__text-inner">Запишись первым</span>
       </span>
     </button>
     <svg class="cursor" width="25" height="25" viewBox="0 0 25 25">
@@ -14,7 +17,7 @@
 
 <script>
 import ('../button/demo')
-import ('../button/index')
+import ('../button/index_button')
 
 export default {
   name: "ButtonComponents",
@@ -32,12 +35,53 @@ export default {
   display: none;
 }
 
+.first-button {
+  font-family: Unbounded, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  position: relative;
+  padding: 15px 45px;
+  border: none;
+  background: #CEF934;
+  clip-path: polygon(5% 0, 100% 0, 100% 65%, 95% 100%, 0 100%, 0 35%);
+}
+
+.first-button::before,
+.first-button::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.button--pan {
+  overflow: hidden;
+}
+
+.button--pan span {
+  position: relative;
+  mix-blend-mode: screen;
+  color: #fff;
+}
+
+.button--pan::before {
+  content: '';
+  background: #EF8AFC;
+  transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.button--pan:hover::before {
+  transform: translate3d(0,-100%,0);
+}
+
 .button {
   font-family: Unbounded, sans-serif;
   font-size: 16px;
   font-weight: 400;
   cursor: pointer;
-  padding: 10px 45px;
+  padding: 15px 45px;
   color: #000;
   border: none;
   position: relative;
@@ -49,7 +93,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  -webkit-clip-path: polygon(5% 0, 100% 0, 100% 65%, 95% 100%, 0 100%, 0 35%);
   clip-path: polygon(5% 0, 100% 0, 100% 65%, 95% 100%, 0 100%, 0 35%);
 }
 
@@ -57,10 +100,9 @@ export default {
 .button--hover {
   outline: none;
   border: none;
-  color: #000;
 }
 
-.button__filler {
+.button__filler{
   background: #CEF934;
   position: absolute;
   width: 150%;

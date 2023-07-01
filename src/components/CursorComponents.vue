@@ -18,13 +18,11 @@ name: "CursorComponents"
 <style lang="scss">
 :root {
   --columns: 45;
-  background-color: #131316 !important;
 }
 
 .demo-1 {
   --cursor-bg: #EF8AFC;
   --cursor-blend-mode: exclusion;
-  background-color: #131316 !important;
 }
 
 .cursor {
@@ -33,7 +31,7 @@ name: "CursorComponents"
   left: 0;
   top: 0;
   pointer-events: none;
-  mix-blend-mode: var(--cursor-blend-mode);
+  mix-blend-mode: lighten;
   --size: calc(100vw / var(--columns));
 }
 
