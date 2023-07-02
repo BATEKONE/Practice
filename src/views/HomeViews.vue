@@ -40,27 +40,36 @@
     </div>
     <CursorComponents />
 
-    <div class="marquee">
-      <div>
+      <div class="marquee-marquee">
         <div class="marquee-block">
-          <marquee class="marquee-sub-block" direction="right" behavior="scroll" scrollamount="9">
+          <Vue3Marquee
+              id="marquee-slider1"
+              duration="20"
+              autoWidth="true"
+              direction="normal">
             <p class="marquee-text">Sypmhony<span class="marquee-text-span">Portainer</span>mongoDB<span class="marquee-text-span">GOlang</span></p>
-          </marquee>
-          <marquee class="marquee-sub-block" direction="right" behavior="scroll" scrollamount="10">
-            <p class="marquee-text">Laravel<span class="marquee-text-span">Docker</span>PostgreSQL<span class="marquee-text-span">NuxtJS</span>nest</p>
-          </marquee>
-                  <img src="../assets/Union.png" alt="Union">
+          </Vue3Marquee>
+          <img src="../assets/Union.png" alt="Union">
         </div>
         <div class="marquee-block">
-          <marquee class="marquee-sub-block" direction="left" behavior="scroll" scrollamount="9">
+          <Vue3Marquee
+              id="marquee-slider2"
+              duration="20"
+              autoWidth="true"
+              direction="normal">
+            <p class="marquee-text">Laravel<span class="marquee-text-span">Docker</span>PostgreSQL<span class="marquee-text-span">NuxtJS</span>nest</p>
+          </Vue3Marquee>
+        </div>
+        <div class="marquee-block">
+          <Vue3Marquee
+              id="marquee-slider3"
+              duration="20"
+              autoWidth="true"
+              direction="reverse">
             <p class="marquee-text">Keycloak<span class="marquee-text-span">GitLab</span>Python<span class="marquee-text-span">Swagger</span>PHP</p>
-          </marquee>
-          <marquee class="marquee-sub-block" direction="left" behavior="scroll" scrollamount="9">
-            <p class="marquee-text">Keycloak<span class="marquee-text-span">GitLab</span>Python<span class="marquee-text-span">Swagger</span>PHP</p>
-          </marquee>
+          </Vue3Marquee>
         </div>
       </div>
-    </div>
   </main>
 </template>
 
@@ -68,12 +77,14 @@
 // import Parallax from 'vue-parallaxy'
 import CursorComponents from "@/components/CursorComponents";
 import ButtonsComponents from "@/components/ButtonsComponents";
+import { Vue3Marquee } from 'vue3-marquee'
 
 export default {
   name: "HomeViews",
   components: {
     ButtonsComponents,
-    CursorComponents
+    CursorComponents,
+    Vue3Marquee,
     // Parallax
   },
   data() {
@@ -333,32 +344,28 @@ header{
   bottom: 2%;
 }
 
-.marquee {
-  position: relative;
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  height: 100vh;
+.marquee{
+  background: #CEF934;
+}
+
+.marquee-marquee{
+  padding-top: 100px;
 }
 
 .marquee-block {
   position: relative;
   z-index: 0;
-  background: transparent;
+  background: #CEF934;
+  margin: 20px 0;
 }
 
 .marquee-block img {
   position: absolute;
   z-index: -1;
   width: 100%;
-  height: 90vh;
-  top: -100%;
+  height: 65vh;
+  top: -150%;
   left: 0;
-}
-
-.marquee-sub-block {
-  background-color: transparent;
-  z-index: 1;
 }
 
 .marquee-text {
@@ -367,14 +374,14 @@ header{
   font-weight: 500;
   line-height: 79px;
   text-align: center;
-  background-color: transparent;
+  background: #CEF934;
   color: #000;
   display: flex;
   column-gap: 13px;
 }
 
 .marquee-text-span {
-  background: transparent;
+  background: #CEF934;
   font-family: Unbounded, sans-serif;
   font-size: 64px;
   line-height: 79px;
