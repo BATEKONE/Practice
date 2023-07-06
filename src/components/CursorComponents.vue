@@ -22,7 +22,6 @@ name: "CursorComponents"
 
 .demo-1 {
   --cursor-bg: #EF8AFC;
-  --cursor-blend-mode: exclusion;
 }
 
 .pixel_cursor {
@@ -45,6 +44,5 @@ name: "CursorComponents"
   height: var(--size);
   background: var(--cursor-bg);
   opacity: 0;
-  border-radius: var(--cursor-radius);
 }
 </style>
