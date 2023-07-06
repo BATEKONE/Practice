@@ -1,7 +1,7 @@
 <template>
   <div class="demo-1">
-    <div class="cursor">
-      <div class="cursor__inner"></div>
+    <div class="pixel_cursor">
+      <div class="pixel_cursor__inner"></div>
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ name: "CursorComponents"
   --cursor-blend-mode: exclusion;
 }
 
-.cursor {
+.pixel_cursor {
   position: fixed;
   width: 100%;
   left: 0;
@@ -35,12 +35,12 @@ name: "CursorComponents"
   --size: calc(100vw / var(--columns));
 }
 
-.cursor__inner {
+.pixel_cursor__inner {
   display: grid;
   grid-template-columns: repeat(var(--columns), var(--size));
 }
 
-.cursor__inner-box {
+.pixel_cursor__inner-box {
   width: var(--size);
   height: var(--size);
   background: var(--cursor-bg);

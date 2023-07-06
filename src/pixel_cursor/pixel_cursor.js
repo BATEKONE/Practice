@@ -47,7 +47,7 @@ export class GooCursor {
         this.DOM.el = DOM_el;
 
         // Cells wrapper element that gets the SVG filter applied
-        this.DOM.inner = this.DOM.el.querySelector('.cursor__inner');
+        this.DOM.inner = this.DOM.el.querySelector('.pixel_cursor__inner');
 
         // Too much for firefox...
         if ( !isFirefox() ) {
@@ -117,8 +117,8 @@ export class GooCursor {
         }
         for (let i = 0; i < this.cellsTotal; ++i) {
             innerStr += customColorsTotal === 0 ?
-                '<div class="cursor__inner-box"></div>' :
-                `<div style="transform: scale(${gsap.utils.random(0.5,2)}); background:${customColorsArr[Math.round(gsap.utils.random(0,customColorsTotal-1))]}" class="cursor__inner-box"></div>`;
+                '<div class="pixel_cursor__inner-box"></div>' :
+                `<div style="transform: scale(${gsap.utils.random(0.5,2)}); background:${customColorsArr[Math.round(gsap.utils.random(0,customColorsTotal-1))]}" class="pixel_cursor__inner-box"></div>`;
         }
         this.DOM.inner.innerHTML = innerStr;
         this.DOM.cells = this.DOM.inner.children;

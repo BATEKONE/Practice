@@ -9,8 +9,8 @@
         <span class="button__text-inner">Запишись первым</span>
       </span>
     </button>
-    <svg class="cursor" width="25" height="25" viewBox="0 0 25 25">
-      <circle class="cursor__inner" cx="12.5" cy="12.5" r="6.25"/>
+    <svg class="button_cursor" width="0" height="0" viewBox="0 0 0 0">
+      <circle class="button_cursor__inner" cx="12.5" cy="12.5" r="6.25"/>
     </svg>
   </div>
 </template>

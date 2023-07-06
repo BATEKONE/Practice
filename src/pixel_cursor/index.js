@@ -1,6 +1,6 @@
 import { GooCursor } from '../pixel_cursor/pixel_cursor.js';
 
-const cursorEl = document.querySelector('.cursor');
+const cursorEl = document.querySelector('.pixel_cursor');
 
 // Initialize cursor
 const goo = new GooCursor(cursorEl);

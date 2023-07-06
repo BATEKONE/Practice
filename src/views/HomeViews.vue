@@ -38,6 +38,7 @@
       </div>
       <ButtonsComponents :showFirstButton="false"/>
     </div>
+
     <CursorComponents />
 
       <div class="marquee-marquee">
